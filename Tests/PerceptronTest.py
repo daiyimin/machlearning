@@ -1,18 +1,25 @@
 from StatisticLearning import Perceptron
 from StatisticLearning import Utils
 from Tests import TestUtils
+import unittest
 
-perceptron = Perceptron(100)
-x, y = TestUtils.load_perceptron_data()
-x_train, y_train, x_test, y_test = Utils.model_selection(x, y, 0.7)
-perceptron.fit(x_train, y_train)
+class TestPerceptron(unittest.TestCase):
+    def test_perceptron(self):
+        perceptron = Perceptron(100)
+        x, y = TestUtils.load_perceptron_data()
+        x_train, y_train, x_test, y_test = Utils.model_selection(x, y, 0.7)
+        perceptron.fit(x_train, y_train)
+        score = Utils.rate_classifier(perceptron, x_test, y_test)
+        self.assertTrue(score > 0.99)
 
-score = Utils.rate_classifier(perceptron, x_test, y_test)
-print(score)
+    def test_chap02(self):
+        # Run the example in Chap02
+        perceptron = Perceptron(100)
+        x, y = Utils.load_csv("TestData/PerceptionData.csv")
+        x_train, y_train, x_test, y_test = Utils.model_selection(x, y, 0.7)
+        perceptron.fit(x, y)
+        score = Utils.rate_classifier(perceptron, x_test, y_test)
+        self.assertTrue(score > 0.99)
 
-# Run the example in Chap02
-# x, y = Utils.load_csv("TestData/PerceptionData.csv")
-# x_train, y_train, x_test, y_test = Utils.model_selection(x, y, 0.7)
-# perceptron.fit(x, y)
-# score = Utils.rate_classifier(perceptron, x_test, y_test)
-# print(score)
+if __name__ == '__main__':
+    unittest.main()
