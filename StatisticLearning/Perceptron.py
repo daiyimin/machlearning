@@ -6,6 +6,7 @@ class Perceptron:
         self.n_iter = n_iter
         self.eta = eta
 
+    # make perceptron parameters fit to the train data
     # x_train: each line is a data set, each column is one feature in data set
     # y_train: each value is category of corresponding x_train data. The value must be -1 and 1.
     # no return, the trained model parameters is updated in the perceptron instance
