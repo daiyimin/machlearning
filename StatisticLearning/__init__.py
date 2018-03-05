@@ -1,2 +1,3 @@
-from StatisticLearning.Perceptron import Perceptron
+from StatisticLearning.PerceptronClassifier import PerceptronClassifier
+from StatisticLearning.KNeighboursClassifier import KNeighboursClassifier
 from StatisticLearning.KDTree import KDTree

@@ -1,14 +1,31 @@
-import numpy as np
 from StatisticLearning import KDTree
+from StatisticLearning import KNeighboursClassifier
+from StatisticLearning import Utils
+from Tests import TestUtils
+import unittest
+import numpy as np
 
-data = np.array([[2,3], [5,4], [9,6], [4,7], [8,1], [7,2]])
-y = np.array([1,2,1,1,3,4])
-#data = np.array([[9,6,3], [4,7,4], [8,1,5], [7,2,2], [7,4,3], [3.2,5,1]])
+class TestKNNClassifier(unittest.TestCase):
+    # def test_KDTree(self):
+    #     x, y = TestUtils.load_knn_data()
+    #     x_train, y_train, x_test, y_test = Utils.model_selection(x, y, 0.90)
+    #
+    #     tree = KDTree()
+    #     tree.build(x_train)
+    #
+    #     distance, neighbour = tree.searchKNeighbours(x_test, 3)
 
-tree = KDTree()
-tree.build(data, y)
+    def test_KNNClassifier(self):
+        x, y = TestUtils.load_knn_data()
+        x_train, y_train, x_test, y_test = Utils.model_selection(x, y, 0.7)
 
-target = np.array([3,1])
-neibour = tree.searchNearest(target)
-neibour = tree.searchKNeibours(target, 2)
-print(neibour)
+        knn = KNeighboursClassifier(5)
+        knn.fit(x_train, y_train)
+        neighbour = knn.predict(x_test)
+
+        score = Utils.rate_batch_classifier(knn, x_test, y_test)
+        print(score)
+        self.assertTrue(score > 0.90)
+
+if __name__ == '__main__':
+    unittest.main()

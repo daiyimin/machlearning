@@ -1,14 +1,14 @@
 import numpy as np
 
 # This is a two category perceptron
-class Perceptron:
+class PerceptronClassifier:
     def __init__(self, n_iter = 100, eta = 0.1):
         self.n_iter = n_iter
         self.eta = eta
 
     # make perceptron parameters fit to the train data
     # x_train: each line is a data set, each column is one feature in data set
-    # y_train: each value is category of corresponding x_train data. The value must be -1 and 1.
+    # y_train: each value is category of corresponding x_train data. The category value must be -1 and 1.
     # no return, the trained model parameters is updated in the perceptron instance
     def fit(self, x_train, y_train):
         # number of train data

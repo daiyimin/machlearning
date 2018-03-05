@@ -43,6 +43,7 @@ def model_selection(x, y, percentage):
     return (x_train, y_train, x_test, y_test)
 
 # rate classifier against given x and y
+# classifier cannot handle array input directly
 # return:
 #   score, 0% ~ 100%
 def rate_classifier(classifier, x, y):
@@ -50,5 +51,18 @@ def rate_classifier(classifier, x, y):
     correct = 0
     for i in range(size):
         if classifier.predict(x[i]) == y[i]:
+            correct += 1
+    return float(correct / size)
+
+# rate classifier against given x and y
+# classifier can handle array input directly
+# return:
+#   score, 0% ~ 100%
+def rate_batch_classifier(classifier, x, y):
+    size = len(x)
+    correct = 0
+    predict_y = classifier.predict(x)
+    for i in range(size):
+        if y[i] == predict_y[i]:
             correct += 1
     return float(correct / size)
