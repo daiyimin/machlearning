@@ -63,6 +63,11 @@ def rate_batch_classifier(classifier, x, y):
     correct = 0
     predict_y = classifier.predict(x)
     for i in range(size):
+        # special handling for invalid test x data
+        # for example if the value of feature[j] of test x data is not included train data, Bayesian classifer cannot predict it
+        # in that case, classifier return the category as -np.inf
+        if predict_y[i] == -np.inf:
+            size -= 1 # remove that data from total number, dont take it into counting.
         if y[i] == predict_y[i]:
             correct += 1
     return float(correct / size)

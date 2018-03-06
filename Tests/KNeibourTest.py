@@ -3,7 +3,6 @@ from StatisticLearning import KNeighboursClassifier
 from StatisticLearning import Utils
 from Tests import TestUtils
 import unittest
-import numpy as np
 
 class TestKNNClassifier(unittest.TestCase):
     # def test_KDTree(self):
@@ -21,7 +20,6 @@ class TestKNNClassifier(unittest.TestCase):
 
         knn = KNeighboursClassifier(5)
         knn.fit(x_train, y_train)
-        neighbour = knn.predict(x_test)
 
         score = Utils.rate_batch_classifier(knn, x_test, y_test)
         print(score)

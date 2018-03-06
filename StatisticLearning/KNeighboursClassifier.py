@@ -16,23 +16,23 @@ class KNeighboursClassifier:
         #self.x_train = x_train
         self.y_train = y_train
 
-    # predict the category of targets
-    def predict(self, targets):
+    # predict the category of test Xs
+    def predict(self, test_xs):
         # search KDTree
-        distances, neighbors = self.kdt.searchKNeighbours(targets, self.k)
+        distances, neighbors = self.kdt.searchKNeighbours(test_xs, self.k)
 
-        flags = None
-        num_target = len(targets)
-        for i in range(0, num_target):
-            neighbour_flags = self.y_train[neighbors[i]]
-            # count all neighbour flags
-            count = np.bincount(neighbour_flags)
-            # use the neighbour flags appears most times as flag of target
-            flag = np.array([np.argmax(count)])
-            # concatenate flags of targets into a numpy array (i.e. flags)
-            if flags is None:
-                flags = flag
+        categories = None
+        num_xs = len(test_xs)
+        for i in range(0, num_xs):
+            neighbour_categories = self.y_train[neighbors[i]]
+            # count all neighbour categories
+            count = np.bincount(neighbour_categories)
+            # vote for the most popular neighbour category
+            category = np.array([np.argmax(count)])
+            # concatenate categories of test Xs into a numpy array (i.e. categories)
+            if categories is None:
+                categories = category
             else:
-                flags = np.concatenate((flags, flag), axis=0)
+                categories = np.concatenate((categories, category), axis=0)
 
-        return flags
+        return categories
