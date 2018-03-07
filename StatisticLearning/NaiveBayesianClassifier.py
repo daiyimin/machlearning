@@ -1,6 +1,23 @@
 import numpy as np
 
 class NaiveBayesianClassifier:
+    # if laplace is not 0, then use Bayesian Estimation to calculate classifier parameters
+    # if laplace is 0,use Most Likelihood Estimation to calculate classifier parameters
+    laplace = 0
+    # unique values of train_y
+    unique_y = None
+    # count of unique values of train_y
+    unique_y_cnt = None
+    # number of features in train_x
+    feature_num = None
+    # map of probability of x
+    # prob_x[j], it's a np.array of shape(K+1,Sj)
+    # in line 0, it is all unique xj(=ajl, l=1,2,..., Sj) in train data
+    # in line k, it's the distribution of conditional probability of Xj|Y=ck, Xj=ajl, l=1,2,..., Sj
+    prob_x = None
+
+    def __init__(self, laplace=0):
+        self.laplace = laplace
 
     def fit(self, train_x, train_y):
         # count the unique values in the input data
@@ -16,11 +33,14 @@ class NaiveBayesianClassifier:
                     unique_cnt = cnt
                 else:
                     unique_cnt = np.concatenate((unique_cnt, cnt))
-            return unique_cnt
+            return unique_cnt.astype(np.float64)
 
         # unique values of train_y
         self.unique_y = np.unique(train_y)
+        # unique value of train_y
         self.unique_y_cnt = countUniqueVal(self.unique_y, train_y)
+        # adjust unique value of train_y with laplace coefficient
+        self.unique_y_cnt += self.laplace
 
         # number of feature in train x
         self.feature_num = train_x.shape[1]
@@ -32,18 +52,22 @@ class NaiveBayesianClassifier:
             # unique xj values (=ajl, l=1,2,...) in train data
             unique_xj = np.unique(train_x[:, j:j+1])
             # probability of each unique xj under condition of y==ck
-            # line 0 is all unique xj values (=ajl, l=1,2,...) in train data
-            # line k is conditional probability of all unique xj values for y=ck
-            # column l is the conditional probability of xj==ajl for all unique y(=ck, k=1,2,...)
+            # line 0 is all unique xj(=ajl, l=1,2,...) in train data
+            # line k is the distribution of conditional probability of Xj|Y=ck, Xj=ajl, l=1,2,..., Sj
+            # column l-1 is the conditional probability of xj==ajl for all unique y(=ck, k=1,2,...)
             # example: np.array([[aj1, aj2,....], [P(aj1|c1), P(aj2|c1)....], [P(aj1|c2), P(aj2|c2)....]....])
             prob_xj_under_cond_y = np.array([unique_xj])
             # calculate probability of each unique xj under condition of y==ck
             for ck in self.unique_y:
                 # get xj slice of y=ck
                 xj_slice = train_x[train_y==ck, j:j+1]
+                # adjust the slice length with laplace coefficient
+                adjusted_slice_len = len(xj_slice) + len(unique_xj) * self.laplace
+                # adjust the unique xj count in xj_slice with laplace coefficient
+                adjusted_unique_xj_cnt = countUniqueVal(unique_xj, xj_slice) + self.laplace
                 # probability of all unique xj values (=ajl, l=1,2,...) in slice.
                 # example: np.array([P(aj1|c1), P(aj2|c1)....])
-                prob_xj_in_slice = countUniqueVal(unique_xj, xj_slice) / len(xj_slice)
+                prob_xj_in_slice = adjusted_unique_xj_cnt / adjusted_slice_len
                 # concatecate prob_xj_under_cond_y and prob_xj_in_slice
                 prob_xj_under_cond_y = np.concatenate((prob_xj_under_cond_y, np.array([prob_xj_in_slice])), axis=0)
             # save the prob_xj_under_cond_y of feature j
@@ -55,7 +79,8 @@ class NaiveBayesianClassifier:
             # prob is the probability of all unique y(=ck, k=1,2,...) for this x.
             # example: np.array([prob(c1|X), prob(c2|X), ...,prob（ck|X),...])
             # prob（ck|X) = sigma(ck)/N * P(X1==x1| y==ck) * P(X2==x2| y==ck) * ....  See (4.5) on P48 of the book
-            # set initial value of prob to np.array([sigma(c1), sigma(c2),...]. N is same for all ck, it can be ignored
+            # set initial value of prob to np.array([sigma(c1), sigma(c2),...].
+            # N + laplace * K is same for all ck, it can be ignored
             prob = self.unique_y_cnt
             for j in range(0, self.feature_num):
                 # get unique xj values (=ajl, l=1,2,...) in train data
@@ -75,7 +100,7 @@ class NaiveBayesianClassifier:
                     # example: prob_Xj = np.array([P(Xj|c1), P(Xj|c2),..., P(Xj|ck)....])
                     prob_Xj = self.prob_x[j][1:, index]
                     # multiple all prob together
-                    prob = prob * prob_Xj
+                    prob = prob * prob_Xj.astype(np.float64)
 
             if np.max(prob) == 0:
                 # if prob is all 0, it means all ck are not possible. Set flag to -np.inf which is not a valid value.
