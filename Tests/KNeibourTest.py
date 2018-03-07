@@ -22,7 +22,7 @@ class TestKNNClassifier(unittest.TestCase):
         knn.fit(x_train, y_train)
 
         score = Utils.rate_batch_classifier(knn, x_test, y_test)
-        print(score)
+        print("test_KNNClassifier", score)
         self.assertTrue(score > 0.90)
 
     def test_NearestNeighbourClassifier(self):
@@ -33,7 +33,7 @@ class TestKNNClassifier(unittest.TestCase):
         knn.fit(x_train, y_train)
 
         score = Utils.rate_batch_classifier(knn, x_test, y_test)
-        print(score)
+        print("test_NearestNeighbourClassifier", score)
         self.assertTrue(score > 0.90)
 
 

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf382fe4-2319-4236-a218-0462d975393c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/TestData/NaiveBayesianData.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py" afterPath="$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/KNeibourTest.py" afterPath="$PROJECT_DIR$/Tests/KNeibourTest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/NaiveBayesianTest.py" afterPath="$PROJECT_DIR$/Tests/NaiveBayesianTest.py" />
     </list>
@@ -62,11 +59,11 @@
         <option value="$PROJECT_DIR$/StatisticLearning/__init__.py" />
         <option value="$PROJECT_DIR$/StatisticLearning/KNeighboursClassifier.py" />
         <option value="$PROJECT_DIR$/StatisticLearning/Utils.py" />
-        <option value="$PROJECT_DIR$/Tests/KNeibourTest.py" />
         <option value="$PROJECT_DIR$/Tests/TestData/NaiveBayesianData.csv" />
         <option value="$PROJECT_DIR$/Tests/TestUtils.py" />
-        <option value="$PROJECT_DIR$/Tests/NaiveBayesianTest.py" />
         <option value="$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py" />
+        <option value="$PROJECT_DIR$/Tests/NaiveBayesianTest.py" />
+        <option value="$PROJECT_DIR$/Tests/KNeibourTest.py" />
       </list>
     </option>
   </component>
@@ -180,7 +177,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.NaiveBayesianTest">
+  <component name="RunManager" selected="Python.KNeibourTest">
     <configuration default="false" name="PerceptronTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -419,7 +416,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="73" />
+      <option name="time" value="77" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -740,7 +737,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StatisticLearning/KDTree1.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/codecs.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/case.py" />
     <entry file="file://$PROJECT_DIR$/StatisticLearning/KDTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3460">
@@ -769,6 +765,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -780,36 +777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/KNeibourTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="29" column="59" lean-forward="true" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/PerceptronTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/TestUtils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -838,10 +809,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="600" column="0" lean-forward="false" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatisticLearning/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/PerceptronTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/KNeibourTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/NaiveBayesianTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+        <state relative-caret-position="-813">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>

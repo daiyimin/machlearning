@@ -14,7 +14,7 @@ class TestNaiveBayesianClassifier(unittest.TestCase):
         nb.fit(x_train, y_train)
 
         score = Utils.rate_batch_classifier(nb, x_test, y_test)
-        print(score)
+        print("test_NaiveBayesianClassifier_with_MLE",score)
         self.assertTrue(score > 0.80)
 
     def test_NaiveBayesianClassifier_with_BE(self):
@@ -25,7 +25,7 @@ class TestNaiveBayesianClassifier(unittest.TestCase):
         nb.fit(x_train, y_train)
 
         score = Utils.rate_batch_classifier(nb, x_test, y_test)
-        print(score)
+        print("test_NaiveBayesianClassifier_with_BE", score)
         self.assertTrue(score > 0.80)
 
     def test_Chap04_with_MLE(self):
@@ -37,7 +37,7 @@ class TestNaiveBayesianClassifier(unittest.TestCase):
         tx = np.array([[2,'S']])
         ty = np.array([-1])
         score = Utils.rate_batch_classifier(nb, tx, ty)
-        print(score)
+        print("test_Chap04_with_MLE", score)
         self.assertTrue(score > 0.80)
 
     def test_Chap04_with_BE(self):
@@ -49,7 +49,7 @@ class TestNaiveBayesianClassifier(unittest.TestCase):
         tx = np.array([[2,'S']])
         ty = np.array([-1])
         score = Utils.rate_batch_classifier(nb, tx, ty)
-        print(score)
+        print("test_Chap04_with_BE", score)
         self.assertTrue(score > 0.80)
 
 if __name__ == '__main__':
