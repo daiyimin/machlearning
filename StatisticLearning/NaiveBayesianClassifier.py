@@ -25,20 +25,17 @@ class NaiveBayesianClassifier:
         # data: input data
         # return
         #   count of unique values in input data, for example np.array([cnt1, cnt2,....])
-        def countUniqueVal(uniqueVal, data):
-            unique_cnt = None
+        def value_counts(uniqueVal, data):
+            unique_cnt = []
             for val in uniqueVal:
-                cnt = np.array( [len(data[data==val])])
-                if unique_cnt is None:
-                    unique_cnt = cnt
-                else:
-                    unique_cnt = np.concatenate((unique_cnt, cnt))
-            return unique_cnt.astype(np.float64)
+                cnt = len(data[data==val])
+                unique_cnt.append(cnt)
+            return np.array(unique_cnt).astype(np.float64)
 
         # unique values of train_y
         self.unique_y = np.unique(train_y)
         # unique value of train_y
-        self.unique_y_cnt = countUniqueVal(self.unique_y, train_y)
+        self.unique_y_cnt = value_counts(self.unique_y, train_y)
         # adjust unique value of train_y with laplace coefficient
         self.unique_y_cnt += self.laplace
 
@@ -64,7 +61,7 @@ class NaiveBayesianClassifier:
                 # adjust the slice length with laplace coefficient
                 adjusted_slice_len = len(xj_slice) + len(unique_xj) * self.laplace
                 # adjust the unique xj count in xj_slice with laplace coefficient
-                adjusted_unique_xj_cnt = countUniqueVal(unique_xj, xj_slice) + self.laplace
+                adjusted_unique_xj_cnt = value_counts(unique_xj, xj_slice) + self.laplace
                 # probability of all unique xj values (=ajl, l=1,2,...) in slice.
                 # example: np.array([P(aj1|c1), P(aj2|c1)....])
                 prob_xj_in_slice = adjusted_unique_xj_cnt / adjusted_slice_len
@@ -74,7 +71,7 @@ class NaiveBayesianClassifier:
             self.prob_x[j] = prob_xj_under_cond_y
 
     def predict(self, test_xs):
-        flags = None
+        flags = []
         for x in test_xs:
             # prob is the probability of all unique y(=ck, k=1,2,...) for this x.
             # example: np.array([prob(c1|X), prob(c2|X), ...,prob（ck|X),...])
@@ -114,10 +111,6 @@ class NaiveBayesianClassifier:
                 # use it as prediction flag of this x
                 flag = np.array([most_probable_y])
 
-            # concatenate flags of all targets into one big np.array
-            if flags is None:
-                flags = flag
-            else:
-                flags = np.concatenate((flags, flag), axis=0)
+            flags.append(flag)
 
-        return flags
+        return np.array(flags)
