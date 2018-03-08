@@ -15,6 +15,13 @@ def load_csv(filename):
     y = df.values[:, -1]
     return (x, y)
 
+def load_pandas_data_from_csv(filename):
+    df = pd.read_csv(filename)
+    col_num = len(df.columns)
+    x = df.iloc[:, range(0, col_num-1)]
+    y = df.iloc[:,-1]
+    return (x, y)
+
 # select train data and test data from raw data
 # x,y: raw data
 # percentage: the percentage of data to be used as train data

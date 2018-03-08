@@ -1,0 +1,16 @@
+Age, Job, House, Loan, Category
+Y, N, N, C, N
+Y, N, N, G, N
+Y, Y, N, G, Y
+Y, Y, Y, C, Y
+Y, N, N, C, N
+M, N, N, C, N
+M, N, N, G, N
+M, Y, Y, G, Y
+M, N, Y, E, Y
+M, N, Y, E, Y
+O, N, Y, E, Y
+O, N, Y, G, Y
+O, Y, N, G, Y
+O, Y, N, E, Y
+O, N, N, C, N

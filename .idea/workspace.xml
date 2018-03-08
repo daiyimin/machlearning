@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf382fe4-2319-4236-a218-0462d975393c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py" afterPath="$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StatisticLearning/CartTree.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/DecisionTreeClassifierTest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/TestData/DecisionTreeData.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/machlearning.iml" afterPath="$PROJECT_DIR$/.idea/machlearning.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StatisticLearning/Utils.py" afterPath="$PROJECT_DIR$/StatisticLearning/Utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StatisticLearning/__init__.py" afterPath="$PROJECT_DIR$/StatisticLearning/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/TestData/NaiveBayesianData.csv" afterPath="$PROJECT_DIR$/Tests/TestData/NaiveBayesianData.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/TestData/PerceptionData.csv" afterPath="$PROJECT_DIR$/Tests/TestData/PerceptionData.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,34 +20,29 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="NaiveBayesianClassifier.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py">
+      <file leaf-file-name="DecisionTreeClassifierTest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/DecisionTreeClassifierTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="236">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestUtils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/TestUtils.py">
+      <file leaf-file-name="CartTree.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/StatisticLearning/CartTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NaiveBayesianTest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/NaiveBayesianTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="75" column="60" lean-forward="false" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,6 +74,10 @@
       <find>unique_y_cnt</find>
       <find>prob_Xj</find>
       <find>ign</find>
+      <find>train_y</find>
+      <find>train_x</find>
+      <find>column</find>
+      <find>value_counts</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -86,18 +93,24 @@
         <option value="$PROJECT_DIR$/StatisticLearning/PerceptronClassifier.py" />
         <option value="$PROJECT_DIR$/Tests/PerceptronTest.py" />
         <option value="$PROJECT_DIR$/StatisticLearning/KDTree.py" />
-        <option value="$PROJECT_DIR$/StatisticLearning/__init__.py" />
         <option value="$PROJECT_DIR$/StatisticLearning/KNeighboursClassifier.py" />
-        <option value="$PROJECT_DIR$/StatisticLearning/Utils.py" />
-        <option value="$PROJECT_DIR$/Tests/TestData/NaiveBayesianData.csv" />
         <option value="$PROJECT_DIR$/Tests/TestUtils.py" />
         <option value="$PROJECT_DIR$/Tests/NaiveBayesianTest.py" />
         <option value="$PROJECT_DIR$/Tests/KNeibourTest.py" />
         <option value="$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py" />
+        <option value="$PROJECT_DIR$/StatisticLearning/DecisionTreeClassifier.py" />
+        <option value="$PROJECT_DIR$/Tests/DecisionTreeClassifier.py" />
+        <option value="$PROJECT_DIR$/StatisticLearning/__init__.py" />
+        <option value="$PROJECT_DIR$/Tests/TestData/DecisionTreeData.csv" />
+        <option value="$PROJECT_DIR$/Tests/TestData/NaiveBayesianData.csv" />
+        <option value="$PROJECT_DIR$/Tests/TestData/PerceptionData.csv" />
+        <option value="$PROJECT_DIR$/StatisticLearning/Utils.py" />
+        <option value="$PROJECT_DIR$/Tests/DecisionTreeClassifierTest.py" />
+        <option value="$PROJECT_DIR$/StatisticLearning/CartTree.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1698" />
@@ -121,29 +134,68 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="machlearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="machlearning" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="machlearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="machlearning" type="462c0819:PsiDirectoryNode" />
-              <item name="StatisticLearning" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="machlearning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="machlearning" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machlearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machlearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machlearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machlearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machlearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machlearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestData" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machlearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machlearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StatisticLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -168,26 +220,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.NaiveBayesianTest">
-    <configuration name="KDTree" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/StatisticLearning" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="machlearning" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StatisticLearning/KDTree.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="KNeibourTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python tests.py.test for DecisionTreeClassifierTest.TestDecisionTree.test_cart_tree">
+    <configuration default="false" name="KNeibourTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -203,43 +237,71 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
     </configuration>
-    <configuration name="NaiveBayesianTest" type="PythonConfigurationType" factoryName="Python">
+    <configuration default="false" name="py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\Admin\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <envs />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="machlearning" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/NaiveBayesianTest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;DecisionTreeClassifierTest.TestPerceptron.test_perceptron&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
     </configuration>
-    <configuration name="PerceptronTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="py.test in DecisionTreeClassifierTest.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\eyimdai\AppData\Local\Programs\Python\Python36\python.exe" />
+      <envs />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="machlearning" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/PerceptronTest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Tests/DecisionTreeClassifierTest.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="py.test for DecisionTreeClassifierTest.TestPerceptron" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="machlearning" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;DecisionTreeClassifierTest.TestPerceptron&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="py.test for DecisionTreeClassifierTest.TestDecisionTree.test_cart_tree" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="machlearning" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;DecisionTreeClassifierTest.TestDecisionTree.test_cart_tree&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -304,18 +366,41 @@
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;.&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
     </configuration>
-    <list size="4">
+    <configuration default="false" name="NaiveBayesianTest" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\eyimdai\AppData\Local\Programs\Python\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="machlearning" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/NaiveBayesianTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.NaiveBayesianTest" />
-      <item index="1" class="java.lang.String" itemvalue="Python.PerceptronTest" />
-      <item index="2" class="java.lang.String" itemvalue="Python.KDTree" />
-      <item index="3" class="java.lang.String" itemvalue="Python.KNeibourTest" />
+      <item index="1" class="java.lang.String" itemvalue="Python.KNeibourTest" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in DecisionTreeClassifierTest.py" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.py.test for DecisionTreeClassifierTest.TestPerceptron" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.py.test for DecisionTreeClassifierTest.TestDecisionTree.test_cart_tree" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.KNeibourTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python.PerceptronTest" />
-        <item index="2" class="java.lang.String" itemvalue="Python.KDTree" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test for DecisionTreeClassifierTest.TestDecisionTree.test_cart_tree" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in DecisionTreeClassifierTest.py" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.py.test for DecisionTreeClassifierTest.TestPerceptron" />
+        <item index="4" class="java.lang.String" itemvalue="Python.KNeibourTest" />
       </list>
     </recent_temporary>
   </component>
@@ -336,61 +421,60 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_for_NaiveBayesianTest_TestNaiveBayesianClassifier - 2018.03.06 at 18h 44m 41s.xml">
-      <configuration name="py.test for NaiveBayesianTest.TestNaiveBayesianClassifier" configurationId="tests" />
+    <history-entry file="py_test_for_DecisionTreeClassifierTest_TestDecisionTree_test_cart_tree - 2018.03.08 at 15h 26m 23s.xml">
+      <configuration name="py.test for DecisionTreeClassifierTest.TestDecisionTree.test_cart_tree" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_for_NaiveBayesianTest_TestNaiveBayesianClassifier_test_NaiveBayesianClassifier - 2018.03.06 at 18h 40m 41s.xml">
-      <configuration name="py.test for NaiveBayesianTest.TestNaiveBayesianClassifier.test_NaiveBayesianClassifier" configurationId="tests" />
+    <history-entry file="py_test_for_DecisionTreeClassifierTest_TestPerceptron_test_perceptron - 2018.03.08 at 14h 55m 12s.xml">
+      <configuration name="py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_for_NaiveBayesianTest_TestNaiveBayesianClassifier_test_NaiveBayesianClassifier - 2018.03.06 at 18h 42m 08s.xml">
-      <configuration name="py.test for NaiveBayesianTest.TestNaiveBayesianClassifier.test_NaiveBayesianClassifier" configurationId="tests" />
+    <history-entry file="py_test_for_DecisionTreeClassifierTest_TestPerceptron_test_perceptron - 2018.03.08 at 14h 57m 18s.xml">
+      <configuration name="py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_for_NaiveBayesianTest_TestNaiveBayesianClassifier_test_NaiveBayesianClassifier - 2018.03.06 at 18h 42m 49s.xml">
-      <configuration name="py.test for NaiveBayesianTest.TestNaiveBayesianClassifier.test_NaiveBayesianClassifier" configurationId="tests" />
+    <history-entry file="py_test_for_DecisionTreeClassifierTest_TestPerceptron_test_perceptron - 2018.03.08 at 15h 00m 31s.xml">
+      <configuration name="py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_for_NaiveBayesianTest_TestNaiveBayesianClassifier_test_NaiveBayesianClassifier - 2018.03.06 at 18h 43m 06s.xml">
-      <configuration name="py.test for NaiveBayesianTest.TestNaiveBayesianClassifier.test_NaiveBayesianClassifier" configurationId="tests" />
+    <history-entry file="py_test_for_DecisionTreeClassifierTest_TestPerceptron_test_perceptron - 2018.03.08 at 15h 06m 07s.xml">
+      <configuration name="py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_NaiveBayesianTest_py - 2018.03.06 at 18h 41m 22s.xml">
-      <configuration name="py.test in NaiveBayesianTest.py" configurationId="tests" />
+    <history-entry file="py_test_for_DecisionTreeClassifierTest_TestPerceptron_test_perceptron - 2018.03.08 at 15h 06m 53s.xml">
+      <configuration name="py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_NaiveBayesianTest_py - 2018.03.06 at 18h 41m 46s.xml">
-      <configuration name="py.test in NaiveBayesianTest.py" configurationId="tests" />
+    <history-entry file="py_test_for_DecisionTreeClassifierTest_TestPerceptron_test_perceptron - 2018.03.08 at 15h 08m 25s.xml">
+      <configuration name="py.test for DecisionTreeClassifierTest.TestPerceptron.test_perceptron" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_DecisionTreeClassifierTest_py - 2018.03.08 at 15h 00m 19s.xml">
+      <configuration name="py.test in DecisionTreeClassifierTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_DecisionTreeClassifierTest_py - 2018.03.08 at 15h 10m 57s.xml">
+      <configuration name="py.test in DecisionTreeClassifierTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_DecisionTreeClassifierTest_py - 2018.03.08 at 15h 20m 35s.xml">
+      <configuration name="py.test in DecisionTreeClassifierTest.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-9" y="-9" width="1698" height="1020" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24479167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2452381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3683616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23977272" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30568182" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14702381" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24067797" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2452381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29491526" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13690476" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -398,6 +482,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests/DecisionTreeClassifierTest.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -405,7 +496,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="77" />
+      <option name="time" value="110" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -464,34 +555,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Tests/KNeibourTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/PerceptronClassifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/KNeighboursClassifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/KDTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
@@ -694,60 +757,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/StatisticLearning/KDTree1.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/codecs.py" />
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/KDTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3460">
-          <caret line="166" column="33" lean-forward="false" selection-start-line="166" selection-start-column="33" selection-end-line="166" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="77" lean-forward="false" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/_jb_pytest_runner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/PerceptronClassifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/KNeighboursClassifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/TestData/PerceptionData.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/TestData/NaiveBayesianData.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/case.py" />
-    <entry file="file://$PROJECT_DIR$/Tests/PerceptronTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -758,35 +771,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/TestUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticLearning/Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/NaiveBayesianTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatisticLearning/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="47" lean-forward="false" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#71#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/PerceptronTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/TestData/DecisionTreeData">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/StatisticLearning/NaiveBayesianClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        <state relative-caret-position="-1937">
+          <caret line="35" column="42" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatisticLearning/KDTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="161" column="25" lean-forward="false" selection-start-line="161" selection-start-column="8" selection-end-line="161" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatisticLearning/PerceptronClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/TestUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/TestData/PerceptionData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/TestData/NaiveBayesianData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="600" column="0" lean-forward="false" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatisticLearning/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatisticLearning/KNeighboursClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/TestData/DecisionTreeData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/DecisionTreeClassifierTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatisticLearning/CartTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="75" column="60" lean-forward="false" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

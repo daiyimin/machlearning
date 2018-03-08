@@ -2,3 +2,4 @@ from StatisticLearning.PerceptronClassifier import PerceptronClassifier
 from StatisticLearning.KNeighboursClassifier import KNeighboursClassifier
 from StatisticLearning.KDTree import KDTree
 from StatisticLearning.NaiveBayesianClassifier import NaiveBayesianClassifier
+from StatisticLearning.CartTree import CartTree
