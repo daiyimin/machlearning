@@ -29,6 +29,8 @@ class CartTree:
         gini_index = 1 - sum(np.square(value_counts/total_count))
         return gini_index
 
+    # x: train x data in format of pandas.DataFrame
+    # y: train y data in format of pandas.Series
     def build(self, x, y):
         # get gini index of y, saved as gini index of this tree/leaf
         self.gini_index = self.gini(y)
@@ -50,7 +52,7 @@ class CartTree:
             # if feature is already used by a parent tree, don't use it again.
             if feature == "used":
                 continue
-            # get the feature column xj
+            # get the feature column xj, j represents column index
             xj = x[feature]
             # get unique values in column xj
             unique_xj = xj.unique()
@@ -67,8 +69,8 @@ class CartTree:
                     min_gini = gini
                     # update selected feature, selected feature value
                     self.sel_feature, self.sel_feature_value = feature, ajl
-                # if xj has 2 unique values, because their gini index are same,
-                # only calculate gini index for the 1st value. Skip rest values.
+                # if xj has 2 unique values, because their gini index and way of slice are same,
+                # only calculate gini index for the first value. Skip the other..
                 if len(unique_xj) == 2:
                     break;
 
@@ -90,3 +92,6 @@ class CartTree:
             y_slice = y[slice]
             tree.build(x_slice, y_slice)
             self.children.append(tree)
+
+    def post_prune(self):
+        
