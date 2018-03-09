@@ -3,3 +3,4 @@ from StatisticLearning.KNeighboursClassifier import KNeighboursClassifier
 from StatisticLearning.KDTree import KDTree
 from StatisticLearning.NaiveBayesianClassifier import NaiveBayesianClassifier
 from StatisticLearning.CartTree import CartTree
+from StatisticLearning.DecisionTreeClassifier import DecisionTreeClassifier

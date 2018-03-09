@@ -20,7 +20,8 @@ class CartTree:
     # selected feature value used to slice x data for creating children
     sel_feature_value = None
 
-    def __init__(self):
+    def __init__(self, root=True):
+        self.root = root
         self.children = list()
 
     # helper function to calculate gini index
@@ -31,6 +32,7 @@ class CartTree:
         gini_index = 1 - sum(np.square(value_counts/total_count))
         return gini_index
 
+    # build cart tree with training data
     # x: train x data in format of pandas.DataFrame
     # y: train y data in format of pandas.Series
     def build(self, x, y):
@@ -86,36 +88,48 @@ class CartTree:
         # calculate the slice for left child and right child
         left_slice = sel_x.isin([self.sel_feature_value])
         right_slice = sel_x.isin([self.sel_feature_value]) == False
+        '''
+        In the book, it doesn't allow to reuse feature.
+        If reuse is allowed, the classifier will create far more complicated tree.
+        It's time consuming, but the predict precision can be very good.
+        Comment it out for good precision.
+        '''
         # mark the feature is used
-        x.rename(columns={self.sel_feature: 'used'}, inplace=True)
+        # x.rename(columns={self.sel_feature: 'used'}, inplace=True)
         for slice in left_slice, right_slice:
-            tree = CartTree()
+            tree = CartTree(root=False)
             x_slice = x[slice]
             y_slice = y[slice]
             tree.build(x_slice, y_slice)
             self.children.append(tree)
 
-    def post_prune_done(self, depth=0):
+    # check if post prune is completed
+    # if the tree depth is more than 2, the post prune is not completed
+    def post_prune_completed(self, depth=0):
+        # depth first search cart tree, if tree depth is more than 2, return False (not completed)
         if depth >= 2:
             return False
         for child in self.children:
-            if child.post_prune_done(depth+1):
+            if not child.post_prune_completed(depth+1):
                 return False
+        # if tree depth is less than 2, return True (completed)
         return True
 
+    # calculate alpha=min(gt) for cart tree
     def calculate_alpha(self, alpha=np.inf):
         if len(self.children) == 0:
-            # if this is a leaf node
-            # calculate Ct, Ct = Nt*Gt(T)
+            # this is a leaf node
+            # calculate Ct, Ct = Nt*Gt. See (5.11)
+            # replace Ht(T) with Gt(T), because both Ht(T) and Gt(T) measures classify error of T.
             Ct = self.x_num * self.gini_index
             # 1 represent one leaf node
             return Ct, 1, alpha
         else:
-            # if this is a non-leaf node
-            # calculate Ct, Ct = Nt*Gt(T)
+            # this is a non-leaf node t. Tt is the sub-tree whose root node is t.
+            # calculate Ct, Ct = Nt*Gt
             Ct = self.x_num * self.gini_index
-            CTt, leaf_num = 0, 0
             # calculate CTt, leaf_num
+            CTt, leaf_num = 0, 0
             for child in self.children:
                 # call calculate_alpha on all children
                 child_Ct, child_leaf_num, alpha = child.calculate_alpha(alpha)
@@ -123,14 +137,24 @@ class CartTree:
                 CTt += child_Ct
                 # sum up leaf numbers in all children
                 leaf_num += child_leaf_num
-            # calculate gt
-            self.gt = (Ct - CTt) / (leaf_num - 1)
-            # if gt is less than alpha, update alpha
-            if self.gt < alpha:
-                alpha = self.gt
-            # return CTt，leaf number of this tree, as well as alpha
-            return CTt, leaf_num, alpha
 
+            if self.root:
+                # root tree will not be pruned. So don't bother to calculate gt for it.
+                # set root.gt to np.inf, so it never gets pruned.
+                self.gt = np.inf
+                # return alpha
+                return alpha
+            else:
+                # calculate gt of Tt
+                self.gt = (Ct - CTt) / (leaf_num - 1)
+                # if gt is less than alpha, update alpha
+                if self.gt < alpha:
+                    alpha = self.gt
+                # return to parent node
+                # CTt，leaf number of this tree, alpha
+                return CTt, leaf_num, alpha
+
+    # prune cart tree using alpha
     def prune(self, alpha):
         if len(self.children) != 0:
             # if this is not a leaf node, check gt equals alpha or not
@@ -148,14 +172,38 @@ class CartTree:
                         return True
         return False
 
+    # post prune the cart tree
     def post_prune(self):
         T = {}
         k = 0
+        # save root tree
         T[k] = copy.deepcopy(self)
-        while not self.post_prune_done():
-            CTt, leaf_num, alpha = self.calculate_alpha()
+        # stop prune when tree depth is less than 2
+        while not self.post_prune_completed():
+            # calculate alpha for current cart tree
+            alpha = self.calculate_alpha()
+            # prune current cart tree using alpha
             self.prune(alpha)
+            # save the pruned tree
             k += 1
             T[k] = copy.deepcopy(self)
 
+        # return list of pruned tree
         return T
+
+    def is_leaf(self):
+        return len(self.children) == 0
+
+    # predict category of a single x. It's a pandas Series.
+    def predict(self, x):
+        node = self
+        # make decisions according to x feature values till meet a leaf node
+        while not node.is_leaf():
+            if x[node.sel_feature] == node.sel_feature_value:
+                # if value of sel_feature is sel_feature_value, go to children[0]
+                # this is decided during building the tree
+                node = node.children[0]
+            else:
+                node = node.children[1]
+        # return category of the leaf node
+        return node.category

@@ -70,9 +70,9 @@ class NaiveBayesianClassifier:
             # save the prob_xj_under_cond_y of feature j
             self.prob_x[j] = prob_xj_under_cond_y
 
-    def predict(self, test_xs):
+    def predict(self, xs):
         flags = []
-        for x in test_xs:
+        for x in xs:
             # prob is the probability of all unique y(=ck, k=1,2,...) for this x.
             # example: np.array([prob(c1|X), prob(c2|X), ...,prob（ck|X),...])
             # prob（ck|X) = sigma(ck)/N * P(X1==x1| y==ck) * P(X2==x2| y==ck) * ....  See (4.5) on P48 of the book
