@@ -47,7 +47,7 @@ class DecisionTreeClassifier:
         sel_t = None
         # select a optimal tree which gets max score on validate data
         # iterate through all trees in list T
-        for k, t in T.items():
+        for t in T.values():
             # use t to do predict
             y_preds = self.predict(x_valid, t)
             # get the score
