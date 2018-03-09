@@ -1,5 +1,4 @@
 import numpy as np
-from collections import OrderedDict
 
 '''
 KNNSortedQueue is a utility class to save K nearest neighbour
