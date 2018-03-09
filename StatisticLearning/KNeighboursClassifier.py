@@ -21,7 +21,7 @@ class KNeighboursClassifier:
         # search KDTree
         distances, neighbors = self.kdt.searchKNeighbours(test_xs, self.k)
 
-        categories = None
+        categories = []
         num_xs = len(test_xs)
         for i in range(0, num_xs):
             neighbour_categories = self.y_train[neighbors[i]]
@@ -29,10 +29,6 @@ class KNeighboursClassifier:
             count = np.bincount(neighbour_categories)
             # vote for the most popular neighbour category
             category = np.array([np.argmax(count)])
-            # concatenate categories of test Xs into a numpy array (i.e. categories)
-            if categories is None:
-                categories = category
-            else:
-                categories = np.concatenate((categories, category), axis=0)
 
-        return categories
+            categories.append(category)
+        return np.array(categories)

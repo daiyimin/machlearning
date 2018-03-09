@@ -71,7 +71,7 @@ class NaiveBayesianClassifier:
             self.prob_x[j] = prob_xj_under_cond_y
 
     def predict(self, xs):
-        flags = []
+        categories = []
         for x in xs:
             # prob is the probability of all unique y(=ck, k=1,2,...) for this x.
             # example: np.array([prob(c1|X), prob(c2|X), ...,prob（ck|X),...])
@@ -101,7 +101,7 @@ class NaiveBayesianClassifier:
 
             if np.max(prob) == 0:
                 # if prob is all 0, it means all ck are not possible. Set flag to -np.inf which is not a valid value.
-                flag = np.array([-np.inf])
+                category = np.array([-np.inf])
             else:
                 # find the index of most probable y in prob
                 # remember that, prob = np.array([prob(c1|X), prob(c2|X), ...,prob（ck|X),...])
@@ -109,8 +109,8 @@ class NaiveBayesianClassifier:
                 # get value of most probable y
                 most_probable_y = self.unique_y[most_probable_y_idx]
                 # use it as prediction flag of this x
-                flag = np.array([most_probable_y])
+                category = np.array([most_probable_y])
 
-            flags.append(flag)
+            categories.append(category)
 
-        return np.array(flags)
+        return np.array(categories)

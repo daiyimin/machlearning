@@ -18,13 +18,13 @@ class DecisionTreeClassifier:
         if tree is None:
             tree = self.tree
 
-        y_preds = []
+        categories = []
         # predict one by one in xs, and put in a list
         for x in xs:
             # Attention: CartTree.predict requires Pandas.Series as parameter.
-            y_pred = tree.predict(pd.Series(x))
-            y_preds.append(y_pred)
-        return np.array(y_preds)
+            category = tree.predict(pd.Series(x))
+            categories.append(category)
+        return np.array(categories)
 
     def fit(self, x, y):
         # use 90% as train data, 10% as validate data
