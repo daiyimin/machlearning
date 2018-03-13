@@ -19,6 +19,7 @@ class NaiveBayesianClassifier:
     def __init__(self, laplace=0):
         self.laplace = laplace
 
+    # train_x, train_y are np.array type
     def fit(self, train_x, train_y):
         # count the unique values in the input data
         # uniqueVal: unique values, for example np.array([val1, val2, ....])
@@ -70,6 +71,7 @@ class NaiveBayesianClassifier:
             # save the prob_xj_under_cond_y of feature j
             self.prob_x[j] = prob_xj_under_cond_y
 
+    # xs is np.array type
     def predict(self, xs):
         categories = []
         for x in xs:

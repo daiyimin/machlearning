@@ -6,8 +6,9 @@ class KNeighboursClassifier:
         self.k = k
 
     # make k neighbour classifier parameters fit to the train data
-    # x_train: each line is a data set, each column is one feature in data set
+    # x_train: each line is a data set, each column is one feature in data set.
     # y_train: each value is category of corresponding x_train data. The category value must be integers.
+    # x_train and y_train are numpy.array type.
     # no return, the trained model parameters is updated in the perceptron instance
     def fit(self, x_train, y_train):
         # train KDTree
@@ -17,6 +18,7 @@ class KNeighboursClassifier:
         self.y_train = y_train
 
     # predict the category of test Xs
+    # test_Xs is a np.array
     def predict(self, test_xs):
         # search KDTree
         distances, neighbors = self.kdt.searchKNeighbours(test_xs, self.k)

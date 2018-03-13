@@ -52,7 +52,7 @@ class KDTree:
         self.data = None
         self.children = dict()
 
-    # x_train: each line is a data set, each column is one feature in data set
+    # x_train: each line is a data set, each column is one feature in data set. It's a np.array([[]]).
     def build(self, x_train):
         if self.depth == 0: # if this is root tree
             # append an indices column after feature columns

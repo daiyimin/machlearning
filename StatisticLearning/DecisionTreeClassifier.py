@@ -11,6 +11,7 @@ class DecisionTreeClassifier:
         total = len(y_preds)
         return float(correct / total)
 
+    # xs is np.array type
     def predict(self, xs, tree=None):
         # during post prune, predict method is called with a given tree
         # in that case, don't use self.tree to do predict
@@ -26,6 +27,7 @@ class DecisionTreeClassifier:
             categories.append(category)
         return np.array(categories)
 
+    # x, y are np.array type
     def fit(self, x, y):
         # use 90% as train data, 10% as validate data
         train_num = int(len(x)*0.9)
