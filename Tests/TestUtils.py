@@ -82,6 +82,7 @@ def rate_batch_classifier(classifier, x, y):
     size = len(x)
     correct = 0
     predict_y = classifier.predict(x)
+
     for i in range(size):
         # special handling for invalid test x data
         # for example if the value of feature[j] of test x data is not included train data, Bayesian classifer cannot predict it

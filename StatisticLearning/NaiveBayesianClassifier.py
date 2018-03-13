@@ -101,7 +101,7 @@ class NaiveBayesianClassifier:
 
             if np.max(prob) == 0:
                 # if prob is all 0, it means all ck are not possible. Set flag to -np.inf which is not a valid value.
-                category = np.array([-np.inf])
+                category = -np.inf
             else:
                 # find the index of most probable y in prob
                 # remember that, prob = np.array([prob(c1|X), prob(c2|X), ...,prob（ck|X),...])
@@ -109,7 +109,7 @@ class NaiveBayesianClassifier:
                 # get value of most probable y
                 most_probable_y = self.unique_y[most_probable_y_idx]
                 # use it as prediction flag of this x
-                category = np.array([most_probable_y])
+                category = most_probable_y
 
             categories.append(category)
 

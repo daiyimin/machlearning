@@ -1,5 +1,5 @@
 import numpy as np
-from StatisticLearning.KDTree import KDTree
+from StatisticLearning.Models.KDTree import KDTree
 
 class KNeighboursClassifier:
     def __init__(self, k = 1):
@@ -28,7 +28,7 @@ class KNeighboursClassifier:
             # count all neighbour categories
             count = np.bincount(neighbour_categories)
             # vote for the most popular neighbour category
-            category = np.array([np.argmax(count)])
+            category = np.argmax(count)
 
             categories.append(category)
         return np.array(categories)

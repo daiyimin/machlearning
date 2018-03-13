@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from StatisticLearning.CartTree import CartTree
+from StatisticLearning.Models.CartTree import CartTree
 
 class DecisionTreeClassifier:
     # rate the predict precision

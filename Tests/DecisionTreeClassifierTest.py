@@ -6,7 +6,7 @@ import copy
 
 class TestDecisionTree(unittest.TestCase):
     # def test_cart_tree(self):
-    #     x, y = Utils.load_csv("TestData/DecisionTreeData.csv")
+    #     x, y = TestUtils.load_csv("TestData/DecisionTreeData.csv")
     #     classifier = DecisionTreeClassifier()
     #     classifier.fit(x, y)
     #     i = 0

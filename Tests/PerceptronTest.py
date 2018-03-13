@@ -9,6 +9,7 @@ class TestPerceptron(unittest.TestCase):
         x_train, y_train, x_test, y_test = TestUtils.model_selection(x, y, 0.7)
         perceptron.fit(x_train, y_train)
         score = TestUtils.rate_classifier(perceptron, x_test, y_test)
+        print("test_perceptron", score)
         self.assertTrue(score > 0.99)
 
     def test_chap02(self):
@@ -18,6 +19,7 @@ class TestPerceptron(unittest.TestCase):
         x_train, y_train, x_test, y_test = TestUtils.model_selection(x, y, 0.7)
         perceptron.fit(x, y)
         score = TestUtils.rate_classifier(perceptron, x_test, y_test)
+        print("test_chap02", score)
         self.assertTrue(score > 0.99)
 
 if __name__ == '__main__':
