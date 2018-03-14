@@ -18,7 +18,7 @@ class MaxEntropyClassifier:
         # predict one by one in xs, and put in a list
         for x in xs:
             # Attention: MaxEntropy.predict requires Pandas.Series as parameter.
-            prob = self.max_ent.predict(pd.Series(x))
+            prob = self.max_ent.fast_predict(pd.Series(x))
             max_Py = prob[1].max()
             category = prob[prob[1] == max_Py][0]
             categories.append(category)

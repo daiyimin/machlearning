@@ -9,7 +9,11 @@ ys = pd.Series(y)
 max_ent = MaxEntroPyGIS()
 max_ent.train(xdf, ys)
 
-xv = pd.Series(["Rainy", "Humid"])
-result = max_ent.predict(xv)
+xv = pd.Series(["Cloudy"])
+result = max_ent.fast_predict(xv)
+print(result)
+
+xv = pd.Series(["Sunny"])
+result = max_ent.fast_predict(xv)
 
 print(result)

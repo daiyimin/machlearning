@@ -102,12 +102,12 @@ class MaxEnt(object):
         return prob
 
 model = MaxEnt()
-model.load_data('TestData/MaxEnt.data')
+model.load_data('TestData/MaxEnt1.data')
 model.train()
 
 result = model.predict('Sunny')
 print(result)
-result = model.predict('Tsunami')
+result = model.predict('Cloudy')
 print(result)
 
 
