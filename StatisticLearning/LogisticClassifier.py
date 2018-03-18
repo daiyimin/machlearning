@@ -12,7 +12,7 @@ class LogisticClassifier:
 
         categories = []
         for i in range(len(prob)):
-            category = 1 if prob[i] > 0.5 else -1
+            category = 1 if prob[i] > 0.5 else 0
             categories.append(category)
 
         return np.array(categories)
