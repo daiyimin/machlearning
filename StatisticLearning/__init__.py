@@ -3,6 +3,8 @@ from StatisticLearning.KNeighboursClassifier import KNeighboursClassifier
 from StatisticLearning.NaiveBayesianClassifier import NaiveBayesianClassifier
 from StatisticLearning.PerceptronClassifier import PerceptronClassifier
 from StatisticLearning.MaxEntropyClassifier import MaxEntropyClassifier
+from StatisticLearning.LogisticClassifier import LogisticClassifier
+
 from StatisticLearning.Models.CartTree import CartTree
 from StatisticLearning.Models.KDTree import KDTree
 from StatisticLearning.Models.MaxEntroPyGIS import MaxEntroPyGIS
