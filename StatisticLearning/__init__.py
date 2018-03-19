@@ -5,4 +5,5 @@ from StatisticLearning.PerceptronClassifier import PerceptronClassifier
 from StatisticLearning.MaxEntropyClassifier import MaxEntropyClassifier
 from StatisticLearning.Models.CartTree import CartTree
 from StatisticLearning.Models.KDTree import KDTree
-from StatisticLearning.Models.MaxEntroPyGIS import MaxEntroPyGIS
+from StatisticLearning.Models.MaxEntropyGIS import MaxEntropyGIS
+from StatisticLearning.Models.FastMaxEntropyGIS import FastMaxEntropyGIS
