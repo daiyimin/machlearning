@@ -9,13 +9,16 @@ import numpy as np
 #   all columns but last one are used as x
 #   the last column is used as y
 # return
-#   x,y: raw data in csv file
+#   x,y: raw data in numpy array format
 def load_csv(filename):
     df = pd.read_csv(filename)
     x = df.values[:, :-1]
     y = df.values[:, -1]
     return (x, y)
 
+# load raw data in csv file
+# return
+#   x,y: raw data in pandas dataframe format
 def load_pandas_data_from_csv(filename):
     df = pd.read_csv(filename)
     col_num = len(df.columns)
@@ -23,22 +26,20 @@ def load_pandas_data_from_csv(filename):
     y = df.iloc[:,-1]
     return (x, y)
 
-# load iris data for perceptron training
-def load_perceptron_data():
+# load binary class iris data for binary class classifier training
+def load_binary_class_iris_data(category_value_type):
     iris = datasets.load_iris()
+    # only get data with target in (0,1)
     data = iris.data[iris.target < 2]
-    target = iris.target[iris.target < 2] * 2 - 1
+    if category_value_type == 0:
+        # modify target from (0,1) to (-1,1)
+        target = iris.target[iris.target < 2] * 2 - 1
+    else:
+        # get target in (0,1)
+        target = iris.target[iris.target < 2]
     return (data, target)
 
-
-# load iris data for perceptron training
-def load_logistic_data():
-    iris = datasets.load_iris()
-    data = iris.data[iris.target < 2]
-    target = iris.target[iris.target < 2]
-    return (data, target)
-
-# load iris data for perceptron training
+# load iris data for multiple class classifier training
 def load_iris_data():
     iris = datasets.load_iris()
     return (iris.data, iris.target)

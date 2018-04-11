@@ -68,7 +68,7 @@ class Logistic:
 
         w = np.zeros(X_train.shape[1])
         b = 0
-        for i in range(self.num_iterations):  # 每次迭代循环一次， num_iterations为迭代次数
+        for i in range(0, self.num_iterations):
 
             # Cost and gradient calculation
             grads, cost = self.propagate(w, b, X_train, Y_train)

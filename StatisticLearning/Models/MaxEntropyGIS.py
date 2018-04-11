@@ -1,10 +1,9 @@
 import numpy as np
 import pandas as pd
 
-class MaxEntroPyGIS:
+class MaxEntropyGIS:
     # iternate times
     iter = None
-    fast_mode = True
 
     def __init__(self, iter=1000):
         self.iter = iter
@@ -43,10 +42,7 @@ class MaxEntroPyGIS:
         for i in range(0, self.iter):
             print("iter=",i)
             # calculate feature expectation using max entropy model
-            if self.fast_mode:
-                epf = self.fast_calculate_epf(x_train)
-            else:
-                epf = self.calculate_epf(x_train)
+            epf = self.calculate_epf(x_train)
             last_w = self.w
             # update model parameter w
             # refer to https://www.isi.edu/natural-language/people/ravichan/papers/bergeretal96.pdf
@@ -95,24 +91,24 @@ class MaxEntroPyGIS:
             y = self.categories[r]
             # calculate P(y|x) in (6.28)
             Py = np.exp(sum(fi_matrix.loc[r] * self.w)) / Z
-            prob = prob.append(pd.Series([y, Py]), ignore_index=True)
+            prob = prob.append(pd.Series([Py, y]), ignore_index=True)
 
         return prob
 
-    def fast_calculate_prob(self, fi_matrix):
-        Z = 0
-        w_sums = pd.Series()
-        for r in range(0, len(self.categories)):
-            w_sum = 0
-            for j in range(0, self.feature_num):
-                if fi_matrix.loc[r, j] == 1:
-                    w_sum += self.w[j]
-            w_sums = w_sums.append(pd.Series(w_sum))
-        Z = sum(np.exp(w_sums))
-        Py = np.exp(w_sums) / Z
-
-        prob = pd.DataFrame(list(zip(self.categories, Py)))
-        return prob
+    # def fast_calculate_prob(self, fi_matrix):
+    #     Z = 0
+    #     w_sums = pd.Series()
+    #     for r in range(0, len(self.categories)):
+    #         w_sum = 0
+    #         for j in range(0, self.feature_num):
+    #             if fi_matrix.loc[r, j] == 1:
+    #                 w_sum += self.w[j]
+    #         w_sums = w_sums.append(pd.Series(w_sum))
+    #     Z = sum(np.exp(w_sums))
+    #     Py = np.exp(w_sums) / Z
+    #
+    #     prob = pd.DataFrame(list(zip(Py, self.categories)))
+    #     return prob
 
     # calculate feature expectation
     # return a epf Series, see example
@@ -126,26 +122,26 @@ class MaxEntroPyGIS:
             fi_matrix = self.calculate_fi(x_train.loc[i])
             # calculate P(y|x) for x
             prob = self.calculate_prob(fi_matrix)
-            Py = prob[1]
+            Py = prob[0]
             # calculate Ep(f) in (6.10) and (6.11)
             # sum(1/N *P(y|x)*fi(y,x)), p(x) = 1/N
             epf += 1 / self.data_num * np.dot(Py, fi_matrix)
         return pd.Series(epf)
 
-    def fast_calculate_epf(self, x_train):
-        epf = pd.Series(np.zeros(self.feature_num))
-        for i in range(0, len(x_train)):
-            fi_matrix = self.calculate_fi(x_train.loc[i])
-            prob = self.fast_calculate_prob(fi_matrix)
-            Py = prob[1]
-            
-            for j in range(0, self.feature_num):
-                epf_j = 0
-                for r in range(0, len(self.categories)):
-                    if fi_matrix.loc[r, j] == 1:
-                        epf_j += Py[r]
-                epf[j] += epf_j
-        return 1 / self.data_num * epf
+    # def fast_calculate_epf(self, x_train):
+    #     epf = pd.Series(np.zeros(self.feature_num))
+    #     for i in range(0, len(x_train)):
+    #         fi_matrix = self.calculate_fi(x_train.loc[i])
+    #         prob = self.fast_calculate_prob(fi_matrix)
+    #         Py = prob[0]
+    #
+    #         for j in range(0, self.feature_num):
+    #             epf_j = 0
+    #             for r in range(0, len(self.categories)):
+    #                 if fi_matrix.loc[r, j] == 1:
+    #                     epf_j += Py[r]
+    #             epf[j] += epf_j
+    #     return 1 / self.data_num * epf
 
 
     def predict(self, x):
@@ -153,7 +149,7 @@ class MaxEntroPyGIS:
         prob = self.calculate_prob(fi_matrix)
         return prob
 
-    def fast_predict(self, x):
-        fi_matrix = self.calculate_fi(x)
-        prob = self.fast_calculate_prob(fi_matrix)
-        return prob
+    # def fast_predict(self, x):
+    #     fi_matrix = self.calculate_fi(x)
+    #     prob = self.fast_calculate_prob(fi_matrix)
+    #     return prob

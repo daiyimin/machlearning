@@ -1,24 +1,24 @@
 from collections import defaultdict
 import math
+import pandas as pd
 
-class MaxEnt(object):
+class FastMaxEntropyGIS(object):
     def __init__(self):
         self.feats = defaultdict(int)
         self.trainset = []
         self.labels = set()
 
-    def load_data(self, file):
-        for line in open(file):
-            fields = line.strip().split()
-            # at least two columns
-            if len(fields) < 2: continue
-            # the first column is label
-            label = fields[0]
+    def load_data(self, x_train, y_train):
+        x = x_train.astype(str)
+        y = y_train.astype(str)
+        for i in range(0, len(x)):
+            label = y[i]
             self.labels.add(label)
 
-            for f in set(fields[1:]):
-                # (label,f) tuple is feature
+            fields = list(x.loc[i])
+            for f in set(fields):
                 self.feats[(label, f)] += 1
+            fields.insert(0, label)
             self.trainset.append(fields)
 
     def _initparams(self):
@@ -83,7 +83,7 @@ class MaxEnt(object):
                 # update w
                 self.w[i] += delta
 
-            print(self.w)
+            # print(self.w)
 
             # test if the algorithm is convergence
             if self._convergence(self.lastw, self.w):
@@ -96,20 +96,11 @@ class MaxEnt(object):
         return prob
 
     def predict(self, input):
-        features = input.strip().split()
+        features = list(input.astype(str))
         prob = self.calprob(features)
         prob.sort(reverse=True)
-        return prob
 
-model = MaxEnt()
-model.load_data('TestData/MaxEnt1.data')
-model.train()
-
-result = model.predict('Sunny')
-print(result)
-result = model.predict('Cloudy')
-print(result)
-
-
-
-
+        prob_df = pd.DataFrame()
+        for p in prob:
+            prob_df = prob_df.append(pd.Series(p), ignore_index=True)
+        return prob_df

@@ -5,7 +5,7 @@ import unittest
 class TestPerceptron(unittest.TestCase):
     def test_perceptron(self):
         perceptron = PerceptronClassifier(100)
-        x, y = TestUtils.load_perceptron_data()
+        x, y = TestUtils.load_binary_class_iris_data(0)
         x_train, y_train, x_test, y_test = TestUtils.model_selection(x, y, 0.7)
         perceptron.fit(x_train, y_train)
         score = TestUtils.rate_classifier(perceptron, x_test, y_test)
