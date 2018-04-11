@@ -11,7 +11,7 @@ class TestMaxEntropy(unittest.TestCase):
 
         classifier = LogisticClassifier()
         x, y = TestUtils.load_logistic_data()
-        x_train, y_train, x_test, y_test = TestUtils.model_selection(x, y, 0.8)
+        x_train, y_train, x_test, y_test = TestUtils.model_selection(x, y, 0.7)
         classifier.fit(x_train, y_train)
 
         score = TestUtils.rate_batch_classifier(classifier, x_test, y_test)

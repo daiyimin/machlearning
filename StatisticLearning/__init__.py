@@ -8,3 +8,5 @@ from StatisticLearning.LogisticClassifier import LogisticClassifier
 from StatisticLearning.Models.CartTree import CartTree
 from StatisticLearning.Models.KDTree import KDTree
 from StatisticLearning.Models.MaxEntroPyGIS import MaxEntroPyGIS
+from StatisticLearning.Models.SVM import SVM
+
