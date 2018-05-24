@@ -1,7 +1,7 @@
 import numpy as np
 import copy
 
-# DecisionTree implemented by CART algorithm
+# DecisionTree for Classification implemented by CART algorithm
 class CartTree:
     # threshold of gini index for stop creating new tree
     gini_threshold = 0.01

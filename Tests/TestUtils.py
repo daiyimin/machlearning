@@ -27,11 +27,11 @@ def load_pandas_data_from_csv(filename):
     return (x, y)
 
 # load binary class iris data for binary class classifier training
-def load_binary_class_iris_data(category_value_type):
+def load_binary_class_iris_data(category):
     iris = datasets.load_iris()
     # only get data with target in (0,1)
     data = iris.data[iris.target < 2]
-    if category_value_type == 0:
+    if category == 0:
         # modify target from (0,1) to (-1,1)
         target = iris.target[iris.target < 2] * 2 - 1
     else:
@@ -101,3 +101,13 @@ def rate_batch_classifier(classifier, x, y):
         if y[i] == predict_y[i]:
             correct += 1
     return float(correct / size)
+
+def rate_batch_regressor(regressor, x, y, display=False):
+    predict_y = regressor.predict(x)
+
+    if display:
+        for y, py in zip(y, predict_y):
+            print(y, py)
+
+    sqr_err = np.sum(np.square(y - predict_y))
+    return sqr_err

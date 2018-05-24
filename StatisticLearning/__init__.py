@@ -4,7 +4,11 @@ from StatisticLearning.NaiveBayesianClassifier import NaiveBayesianClassifier
 from StatisticLearning.PerceptronClassifier import PerceptronClassifier
 from StatisticLearning.MaxEntropyClassifier import MaxEntropyClassifier
 from StatisticLearning.LogisticClassifier import LogisticClassifier
+from StatisticLearning.DecisionTreeRegressor import DecisionTreeRegressor
+from StatisticLearning.GBDTClassifier import GBDTClassifier
 
 from StatisticLearning.Models.CartTree import CartTree
+from StatisticLearning.Models.CartRegressionTree import CartRegressionTree
 from StatisticLearning.Models.KDTree import KDTree
 from StatisticLearning.Models.SVM import SVM
+from StatisticLearning.Models.GBDT import GBDT

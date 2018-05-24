@@ -6,24 +6,22 @@ class DecisionTreeClassifier:
     # rate the predict precision
     # return a percentage score
     # y_preds, y are np.array
-    def rate_tree(self, y_preds, y):
-        correct = sum(y_preds == y)
-        total = len(y_preds)
+    def rate_tree(self, tree, x_test, y_test):
+        y_pred = []
+        for x in x_test:
+            y = tree.predict(x)
+            y_pred.append(y)
+        correct = sum(y_pred == y_test)
+        total = len(y_pred)
         return float(correct / total)
 
     # xs is np.array type
-    def predict(self, xs, tree=None):
-        # during post prune, predict method is called with a given tree
-        # in that case, don't use self.tree to do predict
-        # in other cases(called by end users), use self.tree to do predict
-        if tree is None:
-            tree = self.tree
-
+    def predict(self, xs):
         categories = []
         # predict one by one in xs, and put in a list
         for x in xs:
             # Attention: CartTree.predict requires Pandas.Series as parameter.
-            category = tree.predict(pd.Series(x))
+            category = self.tree.predict(pd.Series(x))
             categories.append(category)
         return np.array(categories)
 
@@ -51,9 +49,10 @@ class DecisionTreeClassifier:
         # iterate through all trees in list T
         for t in T.values():
             # use t to do predict
-            y_preds = self.predict(x_valid, t)
+            # y_preds = self.predict(x_valid, t)
             # get the score
-            score = self.rate_tree(y_preds, y_valid)
+            # score = self.rate_tree(y_preds, y_valid)
+            score  = self.rate_tree(t, x_valid, y_valid)
             # save the tree that gets max score
             if score > max_score:
                 max_score = score
