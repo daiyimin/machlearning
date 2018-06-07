@@ -6,6 +6,7 @@ from StatisticLearning.MaxEntropyClassifier import MaxEntropyClassifier
 from StatisticLearning.LogisticClassifier import LogisticClassifier
 from StatisticLearning.DecisionTreeRegressor import DecisionTreeRegressor
 from StatisticLearning.GBDTClassifier import GBDTClassifier
+from StatisticLearning.ExpectMaxOfMixGaussianClassifier import ExpectMaxOfMixGaussianClassifier
 
 from StatisticLearning.Models.CartTree import CartTree
 from StatisticLearning.Models.CartRegressionTree import CartRegressionTree

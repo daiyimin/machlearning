@@ -100,6 +100,7 @@ def rate_batch_classifier(classifier, x, y):
             size -= 1 # remove that data from total number, dont take it into counting.
         if y[i] == predict_y[i]:
             correct += 1
+
     return float(correct / size)
 
 def rate_batch_regressor(regressor, x, y, display=False):

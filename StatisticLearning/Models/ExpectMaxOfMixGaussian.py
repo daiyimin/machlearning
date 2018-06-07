@@ -74,3 +74,15 @@ class ExpectationMaximumOfMixtureGaussian:
             L += np.log(Lj)
 
         return L
+
+    # based on the initial parameters, the sequence of learnt gaussian model is not predictable.
+    # for example, the mean[0] and cov[0] could belong to 2nd model, while the mean[1] and cov[1] could belong to 1st model
+    # therefore, the meaning of category in prediction result is changing
+    def predict(self, y):
+        prob = []
+        for k in range(self.K):
+            prob.append( multivariate_normal.pdf(y, self.mean[k], self.cov[k]) )
+
+        sort_idx = np.argsort(prob)
+        category = sort_idx[-1]
+        return category
