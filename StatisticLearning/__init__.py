@@ -12,3 +12,4 @@ from StatisticLearning.Models.CartRegressionTree import CartRegressionTree
 from StatisticLearning.Models.KDTree import KDTree
 from StatisticLearning.Models.SVM import SVM
 from StatisticLearning.Models.GBDT import GBDT
+from StatisticLearning.Models.ExpectMaxOfMixGaussian import ExpectationMaximumOfMixtureGaussian
