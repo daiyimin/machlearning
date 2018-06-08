@@ -18,7 +18,13 @@ class TestEMClassifier(unittest.TestCase):
         Y = np.random.multivariate_normal(mean, cov, n)
         return Y
 
-    def plot(self, model1_data, model2_data, learnt_model):
+    def genenrate_model3_data(self, n):
+        mean = (-3, 1)
+        cov = [[1,0.2], [0.2, 1]]
+        Y = np.random.multivariate_normal(mean, cov, n)
+        return Y
+
+    def plot(self, model_data, learnt_model):
         def f(x,y, mean, cov):
             lines = []
             for lx, ly in zip(x,y):
@@ -33,14 +39,15 @@ class TestEMClassifier(unittest.TestCase):
         x1 = np.linspace(-10, 10, 50)
         y1 = np.linspace(-10, 10, 50)
         X, Y = np.meshgrid(x1, y1)
-        C = plt.contour(X, Y, f(X, Y,learnt_model.mean[0], learnt_model.cov[0]))
-        plt.clabel(C, inline=True, fontsize=8)
-        C = plt.contour(X, Y, f(X, Y,learnt_model.mean[1], learnt_model.cov[1]))
-        plt.clabel(C, inline=True, fontsize=8)
 
-        # draw train data
-        plt.plot(model1_data[:,0],model1_data[:,1], '+', color='red')
-        plt.plot(model2_data[:,0],model2_data[:,1], 'x', color='green')
+        for i in range(len(learnt_model.alpha)):
+            C = plt.contour(X, Y, f(X, Y,learnt_model.mean[i], learnt_model.cov[i]))
+            plt.clabel(C, inline=True, fontsize=8)
+
+        style = ['b.','r+','gx','yo']
+        for i in range(len(model_data)):
+            data = model_data[i]
+            plt.plot(data[:, 0], data[:, 1], style[i])
 
         plt.show()
 
@@ -55,12 +62,13 @@ class TestEMClassifier(unittest.TestCase):
         emc.fit(Y)
 
         # draw train data and contour of learnt model together
-        #self.plot(y1, y2, emc.em)
+        learnt_model = emc.em
+        #self.plot([y1, y2], learnt_model)
 
         # we know in the input data Y, model1 data accounts for 1/3, model2 data accounts for 2/3
-        # so in EM algorithm, if coefficient of 1st learnt model is around 1/3 (<0.5)，EM category of model1 is 0, and EM category of model2 is 1
-        # if coefficient of 1st learnt model is around 2/3 (>0.5)，EM category of model2 is 0, EM category of model1 is 1
-        if emc.em.alpha[0] < 0.5:
+        # so in EM algorithm, if coefficient of 1st learnt model is closer to 1/3，EM category of model1 is 0, and EM category of model2 is 1
+        # if coefficient of 1st learnt model is closer to 2/3，EM category of model2 is 0, EM category of model1 is 1
+        if abs(learnt_model.alpha[0] - 1/3) < abs(learnt_model.alpha[1] - 1/3):
             model1_category, model2_category = 0,1
         else:
             model1_category, model2_category = 1,0
@@ -73,7 +81,44 @@ class TestEMClassifier(unittest.TestCase):
         print("test_EMClassifier", score)
         self.assertTrue(score > 0.95)
 
-
+    # def test_EMClassifier2(self):
+    #     # generate train data
+    #     y1 = self.genenrate_model1_data(50)
+    #     y2 = self.genenrate_model2_data(100)
+    #     y3 = self.genenrate_model3_data(150)
+    #     Y = np.vstack((y1, y2, y3))
+    #
+    #     # train EM classifier
+    #     emc = ExpectMaxOfMixGaussianClassifier(3)
+    #     emc.fit(Y)
+    #
+    #     # draw train data and contour of learnt model together
+    #     learnt_model = emc.em
+    #     self.plot([y1, y2, y3], learnt_model)
+    #
+    #     def category(ratio, learnt_model):
+    #         model_number = len(ratio)
+    #         label = np.zeros(model_number)
+    #
+    #         for i in range(model_number):
+    #             delta = []
+    #             for j in range(model_number):
+    #                 delta.append(abs(learnt_model.alpha[j] - ratio[i]))
+    #             sorted_idx = np.argsort(delta)
+    #             # the index model which has minimal delta is chosen as category
+    #             label[i] = sorted_idx[0]
+    #         return label
+    #
+    #     labels = category([1/6, 1/3, 1/2], learnt_model)
+    #
+    #     # generate test data
+    #     y1 = self.genenrate_model1_data(25)
+    #     y2 = self.genenrate_model2_data(25)
+    #     y3 = self.genenrate_model2_data(25)
+    #     Y = np.vstack((y1, y2, y3))
+    #     score = TestUtils.rate_batch_classifier(emc, Y, [labels[0] for i in y1] + [labels[1] for i in y2] + [labels[2] for i in y3])
+    #     print("test_EMClassifier", score)
+    #     self.assertTrue(score > 0.95)
 
 if __name__ == '__main__':
     unittest.main()
